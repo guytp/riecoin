@@ -25,11 +25,8 @@ unsigned int pnSeedTestnet[] =
 
 unsigned int pnSeed[] =
 {
-    0x4dace143, 0xbc1aaa6b, 0x8f6cb26e, 0xeb9d047a, 0xfd0b128b, 0xc40bfb94, 0x1a5790a8, 0xae30c1ad, 0xc073cbad,
-    0x86c849b2, 0x24966ab8, 0x5394e2bc, 0xa79fe2bc, 0xa195d2c0, 0x38daf1c0, 0x30d157c1, 0xd72275d0,
-    0xc15d81d5, 0xf6434fd9, 0x3dfcd418, 0x184bbb25, 0xed6bba36, 0x02b1d23e, 0x30ef0445,
-    0xe6133647, 0xab49c44c, 0xedb24a4c, 0x9b595c54, 0x1cf66a57, 0xc9639c5b, 0x929b4f5e, 0x929b4f5e,
-    0x5c061c62
+	0x6bbf3f08, 0xac5e3df9, 0xbce281a5, 0xc05f1872, 0xc6fb53d8, 0xd9b64cc9, 0x2d4c8b5c, 0x05092709, 0x33ffcf8e,
+	0x42debe75, 0x34ae9834
 };
 
 
@@ -83,11 +80,11 @@ public:
 
         // vSeeds.push_back(CDNSSeedData("bitcoin.sipa.be", "seed.bitcoin.sipa.be"));
 
-        base58Prefixes[PUBKEY_ADDRESS] = list_of(60);
-        base58Prefixes[SCRIPT_ADDRESS] = list_of(5);
-        base58Prefixes[SECRET_KEY] =     list_of(128);
-        base58Prefixes[EXT_PUBLIC_KEY] = list_of(0x04)(0x88)(0xB2)(0x1E);
-        base58Prefixes[EXT_SECRET_KEY] = list_of(0x04)(0x88)(0xAD)(0xE4);
+        base58Prefixes[PUBKEY_ADDRESS] = list_of(60).convert_to_container<std::vector<unsigned char> >();
+        base58Prefixes[SCRIPT_ADDRESS] = list_of(5).convert_to_container<std::vector<unsigned char> >();
+        base58Prefixes[SECRET_KEY] =     list_of(128).convert_to_container<std::vector<unsigned char> >();
+        base58Prefixes[EXT_PUBLIC_KEY] = list_of(0x04)(0x88)(0xB2)(0x1E).convert_to_container<std::vector<unsigned char> >();
+        base58Prefixes[EXT_SECRET_KEY] = list_of(0x04)(0x88)(0xAD)(0xE4).convert_to_container<std::vector<unsigned char> >();
 
         setFixedSeeds( pnSeed, ARRAYLEN(pnSeed) );
     }
@@ -152,11 +149,11 @@ public:
         setFixedSeeds( pnSeedTestnet, ARRAYLEN(pnSeedTestnet) );
         vSeeds.clear();
 
-        base58Prefixes[PUBKEY_ADDRESS] = list_of(122);
-        base58Prefixes[SCRIPT_ADDRESS] = list_of(196);
-        base58Prefixes[SECRET_KEY]     = list_of(239);
-        base58Prefixes[EXT_PUBLIC_KEY] = list_of(0x04)(0x35)(0x87)(0xCF);
-        base58Prefixes[EXT_SECRET_KEY] = list_of(0x04)(0x35)(0x83)(0x94);
+        base58Prefixes[PUBKEY_ADDRESS] = list_of(122).convert_to_container<std::vector<unsigned char> >();
+        base58Prefixes[SCRIPT_ADDRESS] = list_of(196).convert_to_container<std::vector<unsigned char> >();
+        base58Prefixes[SECRET_KEY]     = list_of(239).convert_to_container<std::vector<unsigned char> >();
+        base58Prefixes[EXT_PUBLIC_KEY] = list_of(0x04)(0x35)(0x87)(0xCF).convert_to_container<std::vector<unsigned char> >();
+        base58Prefixes[EXT_SECRET_KEY] = list_of(0x04)(0x35)(0x83)(0x94).convert_to_container<std::vector<unsigned char> >();
     }
     virtual Network NetworkID() const { return CChainParams::TESTNET; }
 };
